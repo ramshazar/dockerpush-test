@@ -1,0 +1,13 @@
+name: Publish Docker Image to Github Packages
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish to Github Packages
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: ramshazar/dockerpush-test/foobar
+        username: ${{ github.actor }}
+        registry: docker.pkg.github.com
