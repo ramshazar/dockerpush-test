@@ -10,4 +10,5 @@ jobs:
       with:
         name: ramshazar/dockerpush-test/foobar
         username: ${{ github.actor }}
+        password: ${{secrets.PACKAGES_TOKEN}}
         registry: docker.pkg.github.com
